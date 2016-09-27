@@ -1,1 +1,1 @@
-mov eax, 10
+add ecx, eax

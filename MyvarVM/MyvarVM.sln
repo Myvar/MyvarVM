@@ -14,6 +14,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyvarVM", "src\MyvarVM\Myva
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyvarVM.Core", "src\MyvarVM.Core\MyvarVM.Core.xproj", "{DB85B77D-306D-4C44-8E9A-395BA728E1B5}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Tests", "src\Tests\Tests.xproj", "{A36245A0-69AC-4B8B-B303-05D2DC34FB8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{DB85B77D-306D-4C44-8E9A-395BA728E1B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB85B77D-306D-4C44-8E9A-395BA728E1B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB85B77D-306D-4C44-8E9A-395BA728E1B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A36245A0-69AC-4B8B-B303-05D2DC34FB8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A36245A0-69AC-4B8B-B303-05D2DC34FB8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A36245A0-69AC-4B8B-B303-05D2DC34FB8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A36245A0-69AC-4B8B-B303-05D2DC34FB8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,5 +41,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1B909F69-C4AA-4D32-A02B-C8D5EB517566} = {B291FD47-2EB7-4431-9B7D-1DEA7574DF9E}
 		{DB85B77D-306D-4C44-8E9A-395BA728E1B5} = {B291FD47-2EB7-4431-9B7D-1DEA7574DF9E}
+		{A36245A0-69AC-4B8B-B303-05D2DC34FB8C} = {B291FD47-2EB7-4431-9B7D-1DEA7574DF9E}
 	EndGlobalSection
 EndGlobal

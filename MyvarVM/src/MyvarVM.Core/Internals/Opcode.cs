@@ -169,15 +169,15 @@ namespace MyvarVM.Core.Internals
                 Opcode_1 = b[0];
 
                 var bits = new BitArray(new byte[] { b[0] });
-                S = bits[7];
-                D = bits[6];
+                S = bits[0];
+                D = bits[1];
             }
             else
             {
                 Opcode_0 = b[0];
                 var bits = new BitArray(new byte[] { b[0] });
-                S = bits[7];
-                D = bits[6];
+                S = bits[0];
+                D = bits[1];
             }
 
             offset++;
