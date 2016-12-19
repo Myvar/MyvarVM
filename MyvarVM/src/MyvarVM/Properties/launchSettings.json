@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "MyvarVM": {
-      "commandName": "Project",
-      "commandLineArgs": "\"C:\\Users\\Myvar\\Documents\\GitHub\\MyvarVM\\MV0.01\\test.bin\""
-    }
-  }
-}
