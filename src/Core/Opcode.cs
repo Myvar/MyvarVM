@@ -80,6 +80,7 @@ namespace MyvarVM.Core
                 case 0x66:
                     Prefex_OperandSizeOveride = true;
                     return true;
+                    //prefex group 4
                  case 0x67:
                     Prefex_AddressSizeOveride = true;
                     return true;
