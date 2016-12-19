@@ -76,6 +76,13 @@ namespace MyvarVM.Core
                 case 0x65:
                     Prefex_GS_SegmentOveride = true;
                     return true;
+                //prefex group 3                
+                case 0x66:
+                    Prefex_OperandSizeOveride = true;
+                    return true;
+                 case 0x67:
+                    Prefex_AddressSizeOveride = true;
+                    return true;
             }
 
             return false;
