@@ -28,6 +28,13 @@ namespace MyvarVM.Core
         public void Run()
         {
             _Cpu.Registers.IP = BootLoaderOffset;
+            _Cpu.State.Running = true;
+
+            while(_Cpu.State.Running)
+            {
+                _Cpu.StepOneOpCode();
+            }
+
         }
     }
 }

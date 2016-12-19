@@ -6,6 +6,7 @@ namespace MyvarVM.Core
         public Registers Registers { get; set; }
         public CPUState State { get; set; }
         public Memmory Memmory { get; set; }
+        private Opcode _opcode { get; set; }
 
         public x86CPU(Config cfg)
         {
@@ -13,9 +14,16 @@ namespace MyvarVM.Core
             Registers = new Registers();
             State = new CPUState();
             Memmory = new Memmory(_cfg);
+            _opcode = new Opcode();
         }
 
         public void ParseOpcode()
+        {
+            _opcode = new Opcode();
+            while(_opcode.Parse(ReadIPByte()));
+        }
+
+        public void ExecuteOpCode()
         {
 
         }
@@ -27,7 +35,8 @@ namespace MyvarVM.Core
 
         public void StepOneOpCode()
         {
-            
+            ParseOpcode();
+            ExecuteOpCode();
         }
     }
 }
