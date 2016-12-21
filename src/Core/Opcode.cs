@@ -1,3 +1,6 @@
+using System;
+using MyvarVM.Core.Opcodes;
+
 namespace MyvarVM.Core
 {
     public class Opcode
@@ -24,8 +27,13 @@ namespace MyvarVM.Core
         public bool Prefex_AddressSizeOveride { get; set; }
 
 
+        public byte POpcode { get; set; }
+        public byte SOpcode { get; set; }
+
+        public byte ModRM { get; set; }
+
         int ParseState;
-        public bool Parse(byte b)
+        public bool Parse(byte b, Func<byte> read)
         {
             switch (ParseState)
             {
@@ -34,9 +42,32 @@ namespace MyvarVM.Core
                     if (!ParsePrefex(b))
                     {
                         ParseState = 1;
-                        Parse(b);
+                        Parse(b, read);
                     }
                     return true;
+                case 1:
+                //opcode it self
+                if(POpcode == 0xFF)
+                {
+                    SOpcode = b;
+                    ParseState = 2;
+                    var me = this;
+                    aOpcode.Parseop(POpcode == 0xFF ? SOpcode : POpcode ,ref me, read);
+                }
+
+                if(b == 0xFF)
+                {
+                    POpcode = b;                    
+                }
+                else
+                {
+                    POpcode = b;
+                    ParseState = 2;
+                    var me = this;
+                    aOpcode.Parseop(POpcode == 0xFF ? SOpcode : POpcode ,ref me, read);
+                }
+                return false;
+
             }
             return false;
         }
@@ -80,8 +111,8 @@ namespace MyvarVM.Core
                 case 0x66:
                     Prefex_OperandSizeOveride = true;
                     return true;
-                    //prefex group 4
-                 case 0x67:
+                //prefex group 4
+                case 0x67:
                     Prefex_AddressSizeOveride = true;
                     return true;
             }

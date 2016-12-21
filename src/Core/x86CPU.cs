@@ -1,3 +1,5 @@
+using MyvarVM.Core.Opcodes;
+
 namespace MyvarVM.Core
 {
     public class x86CPU
@@ -20,12 +22,14 @@ namespace MyvarVM.Core
         public void ParseOpcode()
         {
             _opcode = new Opcode();
-            while(_opcode.Parse(ReadIPByte()));
+            while(_opcode.Parse(ReadIPByte(), ReadIPByte));
         }
 
         public void ExecuteOpCode()
         {
-
+            var me = this;
+            aOpcode.Executeop(_opcode.POpcode == 0xFF
+             ? _opcode.SOpcode : _opcode.POpcode, _opcode, ref me);
         }
 
         private byte ReadIPByte()

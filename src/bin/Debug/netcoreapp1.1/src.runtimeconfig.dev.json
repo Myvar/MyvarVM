@@ -1,7 +1,7 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/myvar/.nuget/packages"
+      "C:\\Users\\Theo\\.nuget\\packages"
     ]
   }
 }

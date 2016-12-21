@@ -10,6 +10,7 @@ namespace MyvarVM
             var cfg = new Config();            
 
             var vm = new VMEngine(cfg);
+            vm.LoadBin("../test/test.bin");
             vm.Run();
         }
     }
